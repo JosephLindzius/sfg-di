@@ -1,7 +1,9 @@
 package com.blauwmaan.sfgdo.controllers;
 
 import com.blauwmaan.sfgdo.services.GreetingService;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class ConstructorInjectedController {
 
     private final GreetingService greetingService;
