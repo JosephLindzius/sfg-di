@@ -1,13 +1,18 @@
 package com.blauwmaan.sfgdo.controllers;
 
+import com.blauwmaan.sfgdo.services.GreetingService;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MyController {
 
-    public String helloWorld(){
-        System.out.println("Hello World!");
+    private final GreetingService greetingService;
 
-        return "Hello programmer!";
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    public String helloWorld(){
+        return greetingService.stateGreeting();
     }
 }

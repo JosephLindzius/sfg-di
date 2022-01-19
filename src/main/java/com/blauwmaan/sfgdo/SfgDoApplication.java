@@ -1,9 +1,6 @@
 package com.blauwmaan.sfgdo;
 
-import com.blauwmaan.sfgdo.controllers.ConstructorInjectedController;
-import com.blauwmaan.sfgdo.controllers.MyController;
-import com.blauwmaan.sfgdo.controllers.PropertyInjectedController;
-import com.blauwmaan.sfgdo.controllers.SetterInjectedController;
+import com.blauwmaan.sfgdo.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -15,8 +12,14 @@ public class SfgDoApplication {
 
 		ApplicationContext appContext = SpringApplication.run(SfgDoApplication.class, args);
 		MyController myController = (MyController) appContext.getBean("myController");
-		String greeting = myController.helloWorld();
-		System.out.println(greeting);
+
+		I18nController i18nController = (I18nController) appContext.getBean("i18nController");
+		System.out.println("-------- Using active Profile");
+		System.out.println(i18nController.sayHello());
+		//qualifier not needed with Primary
+		System.out.println("-------- Primary Bean");
+		System.out.println(myController.helloWorld());
+
 		//not recommended
 		System.out.println("-------- Property");
 
