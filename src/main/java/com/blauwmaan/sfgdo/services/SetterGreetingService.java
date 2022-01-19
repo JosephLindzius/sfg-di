@@ -3,9 +3,9 @@ package com.blauwmaan.sfgdo.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GreetingServiceImpl implements GreetingService {
+public class SetterGreetingService implements GreetingService {
     @Override
     public String stateGreeting() {
-        return "Hello World!";
+        return "Hello World! - Setter";
     }
 }

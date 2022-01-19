@@ -1,6 +1,6 @@
 package com.blauwmaan.sfgdo.controllers;
 
-import com.blauwmaan.sfgdo.services.GreetingServiceImpl;
+import com.blauwmaan.sfgdo.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class SetterInjectedControllerTest {
     @BeforeEach
     void setUp() {
         controller = new SetterInjectedController();
-        controller.setGreetingService(new GreetingServiceImpl());
+        controller.setGreetingService(new ConstructorGreetingService());
     }
 
     @Test
