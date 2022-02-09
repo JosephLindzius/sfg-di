@@ -1,14 +1,17 @@
 package com.blauwmaan.sfgdo.services;
 
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Service;
+import com.blauwmaan.sfgdo.repositories.EnglishGreetingRepository;
 
-@Profile("EN")
-@Service("i18Service")
 public class I18nEnglishGreetingService implements GreetingService {
+
+    private final EnglishGreetingRepository englishGreetingRepository;
+
+    public I18nEnglishGreetingService(EnglishGreetingRepository englishGreetingRepository) {
+        this.englishGreetingRepository = englishGreetingRepository;
+    }
 
     @Override
     public String stateGreeting() {
-        return "Hello World!";
+        return "Hello World - EN";
     }
 }

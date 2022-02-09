@@ -1,4 +1,4 @@
-package guru.springframework.sfgdi.services;
+package com.blauwmaan.sfgdo.services;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;

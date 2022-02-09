@@ -1,18 +1,15 @@
-package guru.springframework.sfgdi.config;
+package com.blauwmaan.sfgdo.config;
 
 import com.springframework.pets.PetService;
 import com.springframework.pets.PetServiceFactory;
-import guru.springframework.sfgdi.repositories.EnglishGreetingRepository;
-import guru.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
-import guru.springframework.sfgdi.services.*;
+import com.blauwmaan.sfgdo.repositories.EnglishGreetingRepository;
+import com.blauwmaan.sfgdo.repositories.EnglishGreetingRepositoryImpl;
+import com.blauwmaan.sfgdo.services.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
-/**
- * Created by jt on 2/20/21.
- */
 @Configuration
 public class GreetingServiceConfig {
 
@@ -24,7 +21,7 @@ public class GreetingServiceConfig {
     @Profile({"dog", "default"})
     @Bean
     PetService dogPetService(PetServiceFactory petServiceFactory){
-       return petServiceFactory.getPetService("dog");
+        return petServiceFactory.getPetService("dog");
     }
 
     @Bean
@@ -35,8 +32,8 @@ public class GreetingServiceConfig {
 
     @Profile({"ES", "default"})
     @Bean("i18nService")
-    I18NSpanishService i18NSpanishService(){
-        return new I18NSpanishService();
+    I18nSpanishGreetingService i18nSpanishGreetingService(){
+        return new I18nSpanishGreetingService();
     }
 
     @Bean
@@ -62,12 +59,12 @@ public class GreetingServiceConfig {
     }
 
     @Bean
-    PropertyInjectedGreetingService propertyInjectedGreetingService(){
-        return new PropertyInjectedGreetingService();
+    PropertyGreetingService propertyGreetingService(){
+        return new PropertyGreetingService();
     }
 
     @Bean
-    SetterInjectedGreetingService setterInjectedGreetingService(){
-        return new SetterInjectedGreetingService();
+    SetterGreetingService setterGreetingService(){
+        return new SetterGreetingService();
     }
 }

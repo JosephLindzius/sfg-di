@@ -1,16 +1,14 @@
 package com.blauwmaan.sfgdo.controllers;
 
-import com.blauwmaan.sfgdo.services.GreetingService;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.blauwmaan.sfgdo.services.GreetingService;;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 
 @Controller
 public class I18nController {
 
     private final GreetingService greetingService;
 
-    public I18nController(@Qualifier("i18Service") GreetingService greetingService) {
+    public I18nController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
